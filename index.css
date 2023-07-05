@@ -1,0 +1,70 @@
+#form{
+    border: 2px solid blac;
+    border-radius: 5%;
+    background-color: #ddd;
+    width: 30%;
+}
+label{
+    margin-left: 3%;
+}
+input{
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+input[type="text"]{
+    font-size: 90%;
+    padding: 2%;
+    outline: none;
+    border: none;
+}
+#color{
+
+    margin-left: 13%;
+}
+#model{
+    margin-left: 11%;
+}
+#charger{
+    margin-left: 8%;
+}
+#ram{
+    margin-left: 4%;
+}
+#price{
+    margin-left: 14%;
+}
+#submit{
+    width: 40%;
+    margin-left: 30%;
+    margin-bottom: 3%;
+    padding: 3%;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(20, 146, 20);
+}
+#select-modelprice{
+    position: absolute;
+    left: 35%;
+    top: 2%;
+}
+#select-price1{
+    margin-left: 240%;
+    margin-top: -40px;
+}
+#display{
+    border: 3px solid black;
+    margin-top: 10%;
+    width: 335%;
+    padding-bottom: 60%;
+}
+button{
+    width: 150%;
+    margin-left: 100%;
+    margin-top: 7%;
+    border-radius: 8px;
+    padding: 12%;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: rgba(34, 32, 43, 0.5);
+}
