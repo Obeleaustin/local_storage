@@ -48,23 +48,33 @@ input[type="text"]{
     top: 2%;
 }
 #select-price1{
-    margin-left: 240%;
+    margin-left: 110%;
     margin-top: -40px;
 }
 #display{
     border: 3px solid black;
     margin-top: 10%;
-    width: 335%;
-    padding-bottom: 60%;
+    width: max-content;
 }
 button{
-    width: 150%;
-    margin-left: 100%;
+    width: fit-content;
+    /* margin-left: 100%; */
     margin-top: 7%;
     border-radius: 8px;
-    padding: 12%;
     cursor: pointer;
 }
 #submit:hover{
     background-color: rgba(34, 32, 43, 0.5);
+}
+#select-screensizeColor{
+    margin-top: -42%;
+    margin-left: 58%;
+}
+#select-screensize{
+    margin-left: 25%;
+    margin-top: -6%;
+}
+#display2{
+    border: 3px solid black;
+    width: fit-content;
 }

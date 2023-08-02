@@ -10,15 +10,19 @@ let ram = document.getElementById('ram');
 let price = document.getElementById('price') ;
 let Submit = document.getElementById('submit');
 let btn = document.getElementById('btn1')
-let data = {};
+let data = [];
 let div = document.getElementById('display');
 let modelname = document.getElementById('modelname');
 let sm = document.getElementById('select-model')
 let sp = document.getElementById('select-price')
+let color1 = document.getElementById('Color')
+let screensize2 = document.getElementById('Screensize')
+let div2 = document.getElementById('display2')
 let modelValue = [];
 let modelData = [];
 let priceData = [];
 let priceValue = [];
+let colorData = []
 let computer = [];
 
 console.log('hey')
@@ -62,11 +66,11 @@ Submit.addEventListener('click', (event) =>{
 //push them into a different array 
 
 let modelFunction = () => {
-    let Model = model.value;
+    // let Model = model.value;
     for(let j=0; j < localStorage.length; j++){
         let retrieveData = JSON.parse(localStorage.getItem(`data${j}`))
         modelData.push(retrieveData)   
-        // console.log(modelData)
+        console.log(typeof(retrieveData))
        
     }
     for(let j = 0 ; j < modelData.length - 1; j++){
@@ -104,19 +108,19 @@ let priceFunction = () => {
     for(let a = 0; a < priceData.length - 1; a++){
         if(!priceValue){
             priceValue.push(modelData.Price);
-            console.log(priceValue)
+          //  console.log(priceValue)
         }
         if(!priceValue.includes(priceData[a].Price)){
             // console.log(`${j} done`)
             priceValue.push(priceData[a].Price);
-            console.log(priceValue);
+           // console.log(priceValue);
          }
     }
 
     for(let  a = 0; a <= priceValue.length - 1; a++){
         let createOption1 = document.createElement('option')
         createOption1.innerHTML = priceValue[a];
-        console.log(priceValue[a]);
+       // console.log(priceValue[a]);
         sp.appendChild(createOption1)
     }
 }
@@ -132,11 +136,8 @@ function myFunction(){
         let model = sm.value;
         let price = sp.value;
         if (modelData[j].Model === model && modelData[j].Price === price){
-            
-            
-            console.log('present')
-                    let retrieveData = JSON.parse(localStorage.getItem(`data${j}`))
-            
+
+            let retrieveData = JSON.parse(localStorage.getItem(`data${j}`))            
                         let paragraph1 = document.createElement('p');
                         let paragraph2 = document.createElement('p');
                         let paragraph3 = document.createElement('p');
@@ -159,106 +160,38 @@ function myFunction(){
                         div.appendChild(paragraph6)
         }
     }
-    // eve.preventDefault()
+    let get = div.innerHTML;
+    console.log(get)
 }
-// btn.addEventListener('click', (eve)=>{
-//     let Model = model.value;
-//      let Price = Number(price.value);
-//      for(let i=0; i < localStorage.length; i++){   
-//     carData.filter((data)=>{
-//        if(data.Model === Model && data.Price === Price){
-//         }
-//     })   
-// }
-//  eve.preventDefault();
-// })
+let get = div.innerHTML;
+console.log(typeof(get1))
+//further filter the values from the div data by color and 
+//screensize 
 
+function mySecondFunction(){
+    let get = div.innerHTML
 
+    for(let a = 0; a < get.length; a++){
+        let retrieve = JSON.parse(get(`data${a}`))
+        colorData.push(retrieve)
+        // console.log(retrieve)
+    }
+}
+// colorFunction()
+// let get = div.innerHTML;
 
-
-// carData = []
-// for(let i = 0; i< localStorage.length; i++){
-//     let retrieveData = JSON.parse(localStorage.getItem(`data${count}`))
-//     carData.push(retrieveData)
-//     console.log(carData)
-// }
-// carData = []
-// for(let i = 0; i< localStorage.length; i++){
-//     let retrieveData = JSON.parse(localStorage.getItem(`data${count}`))
-//     carData.push(retrieveData)
-//     console.log(carData)
+//  function mySecondFunction(){
+//     for(let a = 0; a < get.length; a++){
+//         let retrieve = JSON.parse(JSON.stringify(get))
+//         colorData.push(retrieve)
+//     }
+//     console.log(typeof(get))
+//     console.log(retrieve)
     
 // }
+// mySecondFunction()
+// function mySecondFunction(){
+    // for (let j = 0; j < get,length; j++){
 
-
-// console.log(carData)
-
-//  modelData = [];
-//  let Model = model.value
-//  for (let i = 0; i=localStorage.length; i++){
-//    modelData.filter((Model)=>{
-//      let retrieveData = JSON.parse(localStorage.getItem(`data${count}`))
-//      modelData.push(Model)
-//      console.log()
-//    })
-    // modelname.innerHTML = modelData.filter(modelValue);
-    
-    // function modelValue(value){
-    //     return value = Model;
     // }
-    
-    
-    // modelname.innerHTML = modelData.filter(modelValue);
-    
-    // function modelValue(modeldata){
-    //     return modeldata = modelData(model.value);
-    // }
-// //console.log(retrieveData.Model)
-// const result = modelData.filter(model => retrieveData < 2);
-// console.log(result)
-    // for(let m = 0; m = modelData.length; m++){
-    //     console.log('I entered here')
-    // let retrieveData = JSON.parse(localStorage.getItem(`data${m}`))
-    // console.log(retrieveData)
-    //     // modelValue.push(retrieveData.Model)       
-    //     // console.log(modelValue)
-    // }
-    
-    // var modelName = modelData.filter(function(model){
-    //     return model.Model == "dell";
-    // })
-    // console.log(modelName)
-    // var numbers = [1, 3, 6, 8, 11]
-    
-    // var greaterThanSeven = numbers.filter(function(number){
-    //     return number > 7;
-    // });
-    // console.log(greaterThanSeven)
-    
-    // var creatures = [
-    //     {name: "shark", habitat: "Ocean"},
-    //     {name: "whale", habitat: "Ocean"},
-    //     {name: "lion", habitat: "savanna"},
-    //     {name: "monkey", habitat: "jungle"}
-    // ]
-    // var aquaticCreatures = creatures.filter(function(creature){
-    //     return creature.habitat == "Ocean";
-    // });
-    // console.log(aquaticCreatures)
-// }
-        // modelData.forEach((data) => {
-        //     for(let i = 0; i < modelValue.length; i++){
-        //         if(data.Model === modelData[i].Model) {
-        //             check = true
-        //             console.log(check)
-        //         }
-        //     }
-        
-        //     if (!check === true){
-        //         console.log('I entered here')
-        //         console.log(data.Model)
-        //         modelValue.push(data.Model);
-        //         console.log(modelValue)
-        //     }
-        //     check = false
-        //     } 
+//}
