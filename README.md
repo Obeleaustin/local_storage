@@ -1,1 +1,2 @@
-https://github.com/Obeleaustin/local_storage.git
+https://obeleaustin.github.io/local_storage/
+
