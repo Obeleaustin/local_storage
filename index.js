@@ -24,6 +24,8 @@ let priceData = [];
 let priceValue = [];
 let colorData = []
 let computer = [];
+let values = []
+let colorValue = []
 
 console.log('hey')
 let count;
@@ -71,13 +73,14 @@ let modelFunction = () => {
         let retrieveData = JSON.parse(localStorage.getItem(`data${j}`))
         modelData.push(retrieveData)   
         console.log(typeof(retrieveData))
+        console.log(retrieveData)
        
     }
     for(let j = 0 ; j < modelData.length - 1; j++){
 
         if(!modelValue) {
             modelValue.push(modelData.Model);
-            //console.log(modelValue);
+            //console.log(modelValue)
         }
 
         if(!modelValue.includes(modelData[j].Model)){
@@ -161,22 +164,42 @@ function myFunction(){
         }
     }
     let get = div.innerHTML;
-    console.log(get)
+
+    //console.log(get)
+    // for(let j = 0; j < get.length; j++){
+    //     let value = JSON.parse()
+    // }
+        values.push(get)
+        console.log(values)
+        console.log(typeof(values))
+
+    for(let j = 0; j < values.length - 1; j++){
+        if(!colorValue){
+            colorValue.push(get.Color);
+        }
+        console.log(colorValue)
+        if(!colorValue.includes(get[j].Color)){
+            colorValue.push(get[j].Color);
+            console.log(colorValue)
+        }
+    }
+    
 }
 let get = div.innerHTML;
-console.log(typeof(get1))
-//further filter the values from the div data by color and 
-//screensize 
+// let get = div.innerHTML;
+// console.log(typeof(get1))
+// //further filter the values from the div data by color and 
+// //screensize 
 
-function mySecondFunction(){
-    let get = div.innerHTML
+// function mySecondFunction(){
+//     let get = div.innerHTML
 
-    for(let a = 0; a < get.length; a++){
-        let retrieve = JSON.parse(get(`data${a}`))
-        colorData.push(retrieve)
-        // console.log(retrieve)
-    }
-}
+//     for(let a = 0; a < get.length; a++){
+//         let retrieve = JSON.parse(get(`data${a}`))
+//         colorData.push(retrieve)
+//         // console.log(retrieve)
+//     }
+// }
 // colorFunction()
 // let get = div.innerHTML;
 
